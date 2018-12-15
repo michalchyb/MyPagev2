@@ -4,14 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import pl.mchyb.mypage.helpers.Helper;
+import pl.mchyb.mypage.helpers.Helpers;
 
 public class GeoIpv4Test {
 
 	@Test
 	public void test_001() {
 
-		assertEquals(GeoIPv4.getLocation(Helper.getMyIp()).getCity(), "Poznan");
+		assertEquals(GeoIPv4.getLocation(Helpers.getMyIp()).getCity(), "Poznan");
 	}
 
 	@Test

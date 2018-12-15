@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class Helper {
+public class Helpers {
 
     public static String getMyIp() {
 
