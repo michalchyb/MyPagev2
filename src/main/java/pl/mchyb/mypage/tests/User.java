@@ -1,4 +1,4 @@
-package pl.mchyb.mypage;
+package pl.mchyb.mypage.tests;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;

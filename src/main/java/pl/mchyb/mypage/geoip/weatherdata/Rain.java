@@ -1,25 +1,19 @@
 package pl.mchyb.mypage.geoip.weatherdata;
 
-import javax.persistence.Embeddable;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
-@Data
-@AllArgsConstructor
-@Embeddable
 public class Rain {
 
-	private float h;
-	
-	public Rain() {
-		
+	private String h;
+
+	public String geth() {
+		return h;
 	}
 
+	public void seth(String h) {
+		this.h = h;
+	}
+
+	@Override
+	public String toString() {
+		return "ClassPojo [h = " + h + "]";
+	}
 }

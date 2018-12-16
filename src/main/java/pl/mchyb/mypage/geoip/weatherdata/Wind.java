@@ -1,24 +1,32 @@
 package pl.mchyb.mypage.geoip.weatherdata;
 
-import javax.persistence.Embeddable;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
-@Data
-@AllArgsConstructor
-@Embeddable
 public class Wind {
-	private float speed;
-	private float deg;
-	
-	public Wind() {
-		
+	private String speed;
+
+	private String deg;
+
+	public String getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(String speed) {
+		this.speed = speed;
+	}
+
+	public String getDeg() {
+		return deg;
+	}
+
+	public void setDeg(String deg) {
+		this.deg = deg;
+	}
+
+	@Override
+	public String toString() {
+		return "ClassPojo [speed = " + speed + ", deg = " + deg + "]";
 	}
 }

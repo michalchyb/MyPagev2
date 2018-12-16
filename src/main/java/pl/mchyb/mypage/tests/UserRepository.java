@@ -1,4 +1,4 @@
-package pl.mchyb.mypage;
+package pl.mchyb.mypage.tests;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

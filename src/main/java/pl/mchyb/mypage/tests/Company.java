@@ -1,4 +1,4 @@
-package pl.mchyb.mypage;
+package pl.mchyb.mypage.tests;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

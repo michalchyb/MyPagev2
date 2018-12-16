@@ -1,25 +1,28 @@
 package pl.mchyb.mypage.geoip.weatherdata;
 
-import javax.persistence.Embeddable;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
-@Data
-@AllArgsConstructor
-@Embeddable
-
 public class Coord {
+	private String lon;
 
-	private float lon;
-	private float lat;
+	private String lat;
 
-	public Coord() {
+	public String getLon() {
+		return lon;
+	}
+
+	public void setLon(String lon) {
+		this.lon = lon;
+	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	@Override
+	public String toString() {
+		return "ClassPojo [lon = " + lon + ", lat = " + lat + "]";
 	}
 }
