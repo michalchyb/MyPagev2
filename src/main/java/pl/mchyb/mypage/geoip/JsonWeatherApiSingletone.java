@@ -29,7 +29,7 @@ public class JsonWeatherApiSingletone {
 			WebResource webResource = client.resource(
 					"http://api.openweathermap.org/data/2.5/weather?q="
 				   + GeoIPv4.getLocation(Helpers.getMyIp()).getCity()
-				   + "&units-metric" 
+				   + "&units=metric" 
 				   + "&APPID=f071f2aeda64cdae04b49c962b676f9a"
 				   );
 
