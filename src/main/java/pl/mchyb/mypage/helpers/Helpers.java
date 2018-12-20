@@ -1,8 +1,17 @@
 package pl.mchyb.mypage.helpers;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import pl.mchyb.mypage.geoip.JsonWeatherApiSingletone;
 
 public class Helpers {
 
@@ -21,4 +30,19 @@ public class Helpers {
         }
         return ipAddress;
     }
+    
+	public static void saveToFile(JSONObject jsonObject) throws IOException {
+		BufferedWriter writer = new BufferedWriter(
+				new FileWriter("/home/michalch/eclipse-workspace/MyPagev2/src/main/resources/json/weather.json"));
+		writer.write(jsonObject.toJSONString());
+		writer.close();
+	}
+
+	public static JSONObject convertApiStringToJsonObject() throws ParseException {
+		String dataFromApi = JsonWeatherApiSingletone.getInstance().getDataFromApi();
+
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(dataFromApi);
+		return json;
+	}
 }
