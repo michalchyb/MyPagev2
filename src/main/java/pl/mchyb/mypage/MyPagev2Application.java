@@ -26,13 +26,11 @@ public class MyPagev2Application {
 			jsonObject = Helpers.convertApiStringToJsonObject();
 			System.out.println(jsonObject.toJSONString());
 		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
 			Helpers.saveToFile(jsonObject);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
