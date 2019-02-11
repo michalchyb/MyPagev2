@@ -77,5 +77,5 @@ public class Run {
 		this.myTime = myTime;
 		this.city = city;
 	}
-
+	public Run() {}
 }
