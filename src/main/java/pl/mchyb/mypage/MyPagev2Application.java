@@ -33,6 +33,5 @@ public class MyPagev2Application {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-
 	}
 }
