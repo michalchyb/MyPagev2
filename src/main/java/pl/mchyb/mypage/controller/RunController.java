@@ -27,7 +27,7 @@ public class RunController {
 	}
 
 	@GetMapping("runs")
-	public ResponseEntity<List<Run>> getBooks() {
+	public ResponseEntity<List<Run>> getRuns() {
 		return new ResponseEntity<>(runRepository.findAll(), HttpStatus.OK);
 	}
 
@@ -35,5 +35,4 @@ public class RunController {
 	public ResponseEntity<Run> addRun(@RequestBody Run run) {
 		return new ResponseEntity<Run>(runRepository.save(run), HttpStatus.OK);
 	}
-	
 }

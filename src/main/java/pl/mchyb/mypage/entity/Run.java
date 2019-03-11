@@ -4,16 +4,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.*;
 
 @Entity
 public class Run {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@NotEmpty
+	@NotNull
+	@Size(min=2,max=30)
 	private String nameRun;
+	@NotEmpty
 	private double distance;
+	@NotEmpty
+	@NotNull
+	@PastOrPresent
 	private String date;
+	@NotEmpty
+	@NotNull
 	private String myTime;
+	@NotEmpty
+	@NotNull
+	@Size(min=2,max=10)
 	private String city;
 
 	public long getId() {
