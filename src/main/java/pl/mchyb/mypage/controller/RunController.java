@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,5 +34,16 @@ public class RunController {
 	@PostMapping("runs")
 	public ResponseEntity<Run> addRun(@RequestBody Run run) {
 		return new ResponseEntity<Run>(runRepository.save(run), HttpStatus.OK);
+	}
+
+	@RequestMapping("runs/findById/{runId}")
+	public ResponseEntity<Run> findById(@PathVariable long runId) {
+		return ResponseEntity.ok(runRepository.getOne(runId));
+	}
+
+	@RequestMapping("runs/delete/{runId}")
+	public ResponseEntity<Run> deleteById(@PathVariable long runId) {
+		runRepository.deleteById(runId);
+		return ResponseEntity.noContent().build();
 	}
 }
