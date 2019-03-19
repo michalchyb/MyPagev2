@@ -1,10 +1,15 @@
 package pl.mchyb.mypage.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.*;
+
+import org.json.simple.parser.ParseException;
+
+import pl.mchyb.mypage.helpers.Helpers;
 
 @Entity
 public class Run {
@@ -13,7 +18,7 @@ public class Run {
 	private long id;
 	private String nameRun;
 	private double distance;
-	private String date;
+	private Date date;
 	private String myTime;
 	private String city;
 //	@NotEmpty
@@ -58,11 +63,11 @@ public class Run {
 		this.distance = distance;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
@@ -88,10 +93,10 @@ public class Run {
 				+ myTime + ", city=" + city + "]";
 	}
 
-	public Run(String nameRun, double distance, String date, String myTime, String city) {
+	public Run(String nameRun, double distance, String date, String myTime, String city) throws ParseException, Exception {
 		this.nameRun = nameRun;
 		this.distance = distance;
-		this.date = date;
+		this.date = Helpers.parseDate(date);
 		this.myTime = myTime;
 		this.city = city;
 	}

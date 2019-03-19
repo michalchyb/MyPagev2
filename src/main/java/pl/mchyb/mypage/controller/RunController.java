@@ -38,7 +38,7 @@ public class RunController {
 
 	@RequestMapping("runs/findById/{runId}")
 	public ResponseEntity<Run> findById(@PathVariable long runId) {
-		return ResponseEntity.ok(runRepository.getOne(runId));
+		return ResponseEntity.ok(runRepository.findById(runId));
 	}
 
 	@RequestMapping("runs/delete/{runId}")
