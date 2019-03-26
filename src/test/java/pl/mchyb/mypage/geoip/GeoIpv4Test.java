@@ -1,9 +1,6 @@
 package pl.mchyb.mypage.geoip;
-
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import pl.mchyb.mypage.helpers.Helpers;
 
 public class GeoIpv4Test {

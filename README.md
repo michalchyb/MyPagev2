@@ -4,7 +4,11 @@ Web application to get used to APIs like openweathermap.org, twitter.com etc. In
 ## Built with:
 
 - Eclipse
+
 - Spring Boot
+
 - MySQL
+
 - Hibernate
+
 - Thymeleaf
