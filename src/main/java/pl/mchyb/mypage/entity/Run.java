@@ -21,23 +21,6 @@ public class Run {
 	private Date date;
 	private String myTime;
 	private String city;
-//	@NotEmpty
-//	@NotNull
-//	@Size(min=2,max=30)
-//	private String nameRun;
-//	@NotEmpty
-//	private double distance;
-//	@NotEmpty
-//	@NotNull
-//	@PastOrPresent
-//	private String date;
-//	@NotEmpty
-//	@NotNull
-//	private String myTime;
-//	@NotEmpty
-//	@NotNull
-//	@Size(min=2,max=10)
-//	private String city;
 
 	public long getId() { 
 		return id;
