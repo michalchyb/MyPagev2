@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import org.json.simple.parser.ParseException;
 
 @Entity
-public class Run extends Sport {
+public class Triathlon extends Sport {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -17,7 +17,7 @@ public class Run extends Sport {
 		return id;
 	}
 
-	public Run(String nameRun, double distance, String date, String myTime, String city)
+	public Triathlon(String nameRun, double distance, String date, String myTime, String city)
 			throws ParseException, Exception {
 		super(nameRun, distance, date, myTime, city);
 	}
