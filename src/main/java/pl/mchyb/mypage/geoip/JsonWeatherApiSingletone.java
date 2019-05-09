@@ -1,10 +1,11 @@
 package pl.mchyb.mypage.geoip;
 
+import com.mysql.cj.Constants;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import pl.mchyb.mypage.helpers.Helpers;
+import pl.mchyb.mypage.helpers.*;
 
 public class JsonWeatherApiSingletone {
 
@@ -34,7 +35,7 @@ public class JsonWeatherApiSingletone {
 			ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
 
 			if (response.getStatus() != 200) {
-				throw new RuntimeException(Helpers.ERROR_MESSAGE_WEATHER + response.getStatus());
+				throw new RuntimeException(pl.mchyb.mypage.helpers.Constants.ERROR_MESSAGE_WEATHER + (response.getStatus()));
 			}
 
 			output = response.getEntity(String.class);
