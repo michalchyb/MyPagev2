@@ -82,4 +82,8 @@ public class Triathlon extends Sport {
 		return "Triathlon [id=" + id + ", swimTime=" + swimTime + ", t1=" + t1 + ", bikeTime=" + bikeTime + ", t2=" + t2
 				+ ", runTime=" + runTime + "]";
 	}
+	
+	public void checkMyTimeIsEqual3DisciplinesTimes() {
+		
+	}
 }
