@@ -1,11 +1,11 @@
 package pl.mchyb.mypage.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.json.simple.parser.ParseException;
 
 @Entity
 public class Run extends Sport {
@@ -17,9 +17,11 @@ public class Run extends Sport {
 		return id;
 	}
 
-	public Run(String nameRun, double distance, String date, String myTime, String city)
-			throws ParseException, Exception {
+	public Run(String nameRun, double distance, Date date, String myTime, String city, long id) {
 		super(nameRun, distance, date, myTime, city);
+		this.id = id;
 	}
 
+	public Run() {
+	}
 }

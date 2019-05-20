@@ -1,11 +1,11 @@
 package pl.mchyb.mypage.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.json.simple.parser.ParseException;
 
 @Entity
 public class Triathlon extends Sport {
@@ -66,8 +66,8 @@ public class Triathlon extends Sport {
 		this.id = id;
 	}
 
-	public Triathlon(String nameRun, double distance, String date, String myTime, String city, long id, String swimTime,
-			String t1, String bikeTime, String t2, String runTime) throws ParseException, Exception {
+	public Triathlon(String nameRun, double distance, Date date, String myTime, String city, long id, String swimTime,
+			String t1, String bikeTime, String t2, String runTime) {
 		super(nameRun, distance, date, myTime, city);
 		this.id = id;
 		this.swimTime = swimTime;
@@ -82,8 +82,10 @@ public class Triathlon extends Sport {
 		return "Triathlon [id=" + id + ", swimTime=" + swimTime + ", t1=" + t1 + ", bikeTime=" + bikeTime + ", t2=" + t2
 				+ ", runTime=" + runTime + "]";
 	}
+
+	public Triathlon(){}
 	
 	public void checkMyTimeIsEqual3DisciplinesTimes() {
-		
+
 	}
 }
