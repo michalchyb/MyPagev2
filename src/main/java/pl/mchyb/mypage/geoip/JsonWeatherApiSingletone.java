@@ -1,11 +1,10 @@
 package pl.mchyb.mypage.geoip;
 
-import com.mysql.cj.Constants;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import pl.mchyb.mypage.helpers.*;
+import pl.mchyb.mypage.helpers.Helpers;
 
 public class JsonWeatherApiSingletone {
 
