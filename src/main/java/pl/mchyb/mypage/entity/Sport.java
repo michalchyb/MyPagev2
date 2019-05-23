@@ -6,8 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.ws.rs.DefaultValue;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public abstract class Sport {
 
 	@Id
@@ -23,7 +24,7 @@ public abstract class Sport {
 	}
 
 	private String nameRun;
-	@Column(name = "distance" )
+	@Column(name = "distance")
 	private double distance = 0.0;
 	private Date date;
 	private String myTime;
