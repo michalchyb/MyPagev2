@@ -2,10 +2,29 @@ package pl.mchyb.mypage.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.ws.rs.DefaultValue;
+
 public abstract class Sport {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	protected long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	private String nameRun;
-	private double distance;
+	@Column(name = "distance" )
+	private double distance = 0.0;
 	private Date date;
 	private String myTime;
 	private String city;
@@ -57,7 +76,6 @@ public abstract class Sport {
 	}
 
 	public Sport(String nameRun, double distance, Date date, String myTime, String city) {
-		super();
 		this.nameRun = nameRun;
 		this.distance = distance;
 		this.date = date;

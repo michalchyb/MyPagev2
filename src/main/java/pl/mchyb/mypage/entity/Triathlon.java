@@ -9,18 +9,23 @@ import javax.persistence.Id;
 
 @Entity
 public class Triathlon extends Sport {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	protected long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 	private String swimTime;
 	private String t1;
 	private String bikeTime;
 	private String t2;
 	private String runTime;
-
-	public long getId() {
-		return id;
-	}
 
 	public String getSwimTime() {
 		return swimTime;
@@ -62,14 +67,9 @@ public class Triathlon extends Sport {
 		this.runTime = runTime;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Triathlon(String nameRun, double distance, Date date, String myTime, String city, long id, String swimTime,
+	public Triathlon( String nameRun, double distance, Date date, String myTime, String city, String swimTime,
 			String t1, String bikeTime, String t2, String runTime) {
-		super(nameRun, distance, date, myTime, city);
-		this.id = id;
+		super( nameRun, distance, date, myTime, city);
 		this.swimTime = swimTime;
 		this.t1 = t1;
 		this.bikeTime = bikeTime;
@@ -83,9 +83,7 @@ public class Triathlon extends Sport {
 				+ ", runTime=" + runTime + "]";
 	}
 
-	public Triathlon(){}
-	
-	public void checkMyTimeIsEqual3DisciplinesTimes() {
-
+	public Triathlon() {
 	}
+
 }
