@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 @MappedSuperclass
 public abstract class Sport {
@@ -22,12 +26,23 @@ public abstract class Sport {
 	public void setId(long id) {
 		this.id = id;
 	}
-
+	
+	@NotEmpty
+	@NotNull
+	@Size(min = 5)
 	private String nameRun;
 	@Column(name = "distance")
+	@NotEmpty
+	@NotNull
+	@Positive
 	private double distance = 0.0;
+	@NotEmpty
+	@NotNull
 	private Date date;
 	private String myTime;
+	@NotEmpty
+	@NotNull
+	@Size(min = 3)
 	private String city;
 
 	public String getNameRun() {
